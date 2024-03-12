@@ -2,6 +2,7 @@
 
 from board import Board
 from piece import Piece
+from random import randint
 
 current_player = 'w'
 

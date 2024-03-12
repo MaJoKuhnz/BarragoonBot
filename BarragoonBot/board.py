@@ -76,26 +76,211 @@ class Board:
                             self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="th" or
                             self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
                             self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]]=="  "):
-                            moves.append((Piece((self.plist[i].pos[0],self.plist[i].pos[1]-2),"w2"),self.plist[i]))
+                                moves.append((Piece((self.plist[i].pos[0],self.plist[i].pos[1]-2),"w2"),self.plist[i]))
                     if(self.plist[i].pos[1]+1<9 and self.plist[i].pos[1]+2<9):
                         if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="or" or
                             self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="th" or
                             self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
                             self.state[self.plist[i].pos[1]+2][self.plist[i].pos[0]]=="  "):
-                            moves.append((Piece((self.plist[i].pos[0],self.plist[i].pos[1]+2),"w2"),self.plist[i]))
+                                moves.append((Piece((self.plist[i].pos[0],self.plist[i].pos[1]+2),"w2"),self.plist[i]))
                     if(self.plist[i].pos[0]+1<7 and self.plist[i].pos[0]+2<7):
                         if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="od" or
                             self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="tv" or
                             self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="  ") and
                             self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2]=="  "):
-                            moves.append((Piece((self.plist[i].pos[0]-2,self.plist[i].pos[1]),"w2"),self.plist[i]))
+                                moves.append((Piece((self.plist[i].pos[0]-2,self.plist[i].pos[1]),"w2"),self.plist[i]))
                     if(self.plist[i].pos[0]-1>-1 and self.plist[i].pos[0]-2>-1):
                         if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="ou" or
                             self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="tv" or
                             self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="  ") and
                             self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-2]=="  "):
-                            moves.append((Piece((self.plist[i].pos[0]+2,self.plist[i].pos[1]),"w2"),self.plist[i]))
-        return moves
+                                moves.append((Piece((self.plist[i].pos[0]+2,self.plist[i].pos[1]),"w2"),self.plist[i]))
+
+                    if(self.plist[i].pos[1]-1>-1 and self.plist[i].pos[0]-1>-1):
+                        if((self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="lu" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]-1),"w2"),self.plist[i]))
+                    if(self.plist[i].pos[1]+1<9 and self.plist[i].pos[0]+1<7):
+                        if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="ld" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]+1),"w2"),self.plist[i]))
+                    if(self.plist[i].pos[0]+1<7 and self.plist[i].pos[1]-1>-1):
+                        if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="rd" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="tt" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="  ") and
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]-1),"w2"),self.plist[i]))
+                    if(self.plist[i].pos[0]-1>-1 and self.plist[i].pos[1]+1<7):
+                        if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="ru" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="tt" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="  ") and
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),"w2"),self.plist[i]))
+                    if(self.plist[i].pos[1]+1<7 and self.plist[i].pos[0]-1>-1):
+                        if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="lr" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),"w2"),self.plist[i]))
+                    if(self.plist[i].pos[1]-1>-1 and self.plist[i].pos[0]-1>-1):
+                        if((self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="ll" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]-1),"w2"),self.plist[i]))
+                    if(self.plist[i].pos[1]+1<7 and self.plist[i].pos[0]+1<9):
+                        if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="rr" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]+1),"w2"),self.plist[i]))
+                    if(self.plist[i].pos[0]+1<9 and self.plist[i].pos[1]-1>-1):
+                        if((self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="rl" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]=="  "):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]-1),"w2"),self.plist[i]))
+
+                    # taking
+                    
+                    if(self.plist[i].pos[1]-1>-1 and self.plist[i].pos[1]-2>-1):
+                        if((self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="ol" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="th" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]]!="  " or
+                            self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]]!="tt" or
+                            self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]]!=player+"2" or
+                            self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]]!=player+"3" or
+                            self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0],self.plist[i].pos[1]-2),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0],self.plist[i].pos[1]-2),self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]])))
+                    if(self.plist[i].pos[1]+1<9 and self.plist[i].pos[1]+2<9):
+                        if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="or" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="th" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]+2][self.plist[i].pos[0]]!="  " or
+                            self.state[self.plist[i].pos[1]+2][self.plist[i].pos[0]]!="tt" or
+                            self.state[self.plist[i].pos[1]+2][self.plist[i].pos[0]]!=player+"2" or
+                            self.state[self.plist[i].pos[1]+2][self.plist[i].pos[0]]!=player+"3" or
+                            self.state[self.plist[i].pos[1]+2][self.plist[i].pos[0]]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0],self.plist[i].pos[1]+2),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0],self.plist[i].pos[1]+2),self.state[self.plist[i].pos[1]+2][self.plist[i].pos[0]])))
+                    if(self.plist[i].pos[0]+1<7 and self.plist[i].pos[0]+2<7):
+                        if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="od" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="tv" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="  ") and
+                            (self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2]!="  " or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2]!="tt" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2]!=player+"2" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2]!=player+"3" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]-2,self.plist[i].pos[1]),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]-2,self.plist[i].pos[1]),self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-2])))
+                    if(self.plist[i].pos[0]-1>-1 and self.plist[i].pos[0]-2>-1):
+                        if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="ou" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="tv" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="  ") and
+                            (self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-2]!="  " or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-2]!="tt" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-2]!=player+"2" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-2]!=player+"3" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-2]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]+2,self.plist[i].pos[1]),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]+2,self.plist[i].pos[1]),self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2])))
+
+                    if(self.plist[i].pos[1]-1>-1 and self.plist[i].pos[0]-1>-1):
+                        if((self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="lu" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!="  " or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]-1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]-1),self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1])))
+                    if(self.plist[i].pos[1]+1<9 and self.plist[i].pos[0]+1<7):
+                        if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="ld" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!="  " or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]+1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]+1),self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1])))
+                    if(self.plist[i].pos[0]+1<7 and self.plist[i].pos[1]-1>-1):
+                        if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="rd" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="tt" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="  ") and
+                            (self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!="  " or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]-1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]-1),self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1])))
+                    if(self.plist[i].pos[0]-1>-1 and self.plist[i].pos[1]+1<7):
+                        if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="ru" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="tt" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]-1]=="  ") and
+                            (self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!="  " or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1])))
+                    if(self.plist[i].pos[1]+1<7 and self.plist[i].pos[0]-1>-1):
+                        if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="lr" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!="  " or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1])))
+                    if(self.plist[i].pos[1]-1>-1 and self.plist[i].pos[0]-1>-1):
+                        if((self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="ll" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!="  " or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]-1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]-1),self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]-1])))
+                    if(self.plist[i].pos[1]+1<7 and self.plist[i].pos[0]+1<9):
+                        if((self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="rr" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!="  " or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!="tt" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]+1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]+1),self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]+1])))
+                    if(self.plist[i].pos[0]+1<9 and self.plist[i].pos[1]-1>-1):
+                        if((self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="rl" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]]=="  ") and
+                            (self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!="  " or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!="tt" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!=player+"2" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!=player+"3" or
+                            self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!=player+"4")):
+                                moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]-1),"w2"),self.plist[i],
+                                         "take", Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1])))
+        return (moves)
 
 
 
