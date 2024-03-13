@@ -307,7 +307,6 @@ class Board:
                            self.state[self.plist[i].pos[1]-2][self.plist[i].pos[0]]=="  "):
                             moves.append((Piece((self.plist[i].pos[0],self.plist[i].pos[1]-2),"w3"),self.plist[i]))
 
-                    
         return (moves)
 
 
