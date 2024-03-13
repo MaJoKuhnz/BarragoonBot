@@ -280,6 +280,13 @@ class Board:
                             self.state[self.plist[i].pos[1]-1][self.plist[i].pos[0]+1]!=player+"4")):
                                 moves.append((Piece((self.plist[i].pos[0]+1,self.plist[i].pos[1]-1),"w2"),self.plist[i],
                                          "take", Piece((self.plist[i].pos[0]-1,self.plist[i].pos[1]+1),self.state[self.plist[i].pos[1]+1][self.plist[i].pos[0]-1])))
+                if(self.plist[i].type[1]=="3"):
+                    if((self.plist[i].pos[0])+2<6):
+                        if((self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="  " or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="ol" or
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+1]=="th" or)
+                            self.state[self.plist[i].pos[1]][self.plist[i].pos[0]+2]=="  "):
+                            moves.append((Piece((self.plist[i].pos[0]+2,self.plist[i].pos[1]),"w2"),self.plist[i]))
         return (moves)
 
 
